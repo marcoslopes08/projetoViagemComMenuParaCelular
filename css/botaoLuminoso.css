@@ -1,0 +1,81 @@
+/* CSS Botão Luminoso - Projeto Viagem com Menu para Celular */
+
+/* CSS Botão Luminoso - Box PASSEIOS & DESTINOS */
+.botaoLuminosoProjetos {
+    position: absolute; /* precisa ser 'position: absolute' para as Classes abaixo funcionarem */
+    color: whitesmoke; /* cor da Fonte dentro do Botão */
+    text-decoration: none; /* retira o sublinhado dos botões clicáveis, que vem por padrão */
+    padding: 10px 25px;  /* 10px = espaçamento das margens Superior/Inferior
+                            25px = espaçamento entre margem Direita/Esquerda em relação ao Texto */
+    /* padding-top: 15px; */ /* dá um espaçamento na parte Superior dentro do Botão
+                          ajuda ao padding acima a centralizar o Texto (VISITE) no meio do Botão */
+    transition: 0.5s; /* tempo de animação quando o mouse for colocado em cima do Botão */
+    /* border-radius: 30px; */ /* arredondamento das bordas */
+    font-weight: bold; /* NEGRITO */
+    font-size: large; /* aumenta o tamanho da Fonte */
+    background-color: transparent; /* transparent = faz o 'hover' funcionar */
+	border: 3px solid #fc036b; /* 3px = expessura da borda criada em volta do Botão
+								  solid = precisa ser colocado para o 'hover' abaixo funcionar
+							    #f9004d = no 'hover' quando o mouse for posicionado sobre o Botão, o Fundo ficará
+							        	escuro (da cor do Plano de Fundo) e as bordas ficarão vermelhas */
+    text-transform: uppercase; /* Caixa Alta */
+}
+
+.botaoLuminosoProjetos:hover {
+    /* position: absolute; */
+    letter-spacing: 0.25em; /* espaçamento/animação que expandirá o Botão quando o mouse for posicionado
+                            acima dele (MUITO LEGAL ISSO) */
+    background: var(--clr); /* var(--clr) faz a MÁGICA ACONTECER, a Linha em volta do Botão
+                            e em cima dos QUADRADINHOS ficará com BRILHO */
+    color: var(--clr); /* var(--clr) faz a MÁGICA ACONTECER, a COR do Texto dentro do Botão ficará com BRILHO */
+    box-shadow: 0 0 35px var(--clr); /* var(--clr) faz a MÁGICA ACONTECER, a Sombra no Botão ficará com BRILHO */
+    text-decoration: none; /* retira o sublinhado dos botões clicáveis, que vem por padrão */
+    color: #fc036b; /* cor da Fonte dentro do Botão quando o mouse for posicionado sobre ele */
+    transform: translateX(-10%); /* faz o hover mover o Botão pra ambos os Lados */
+    border: 3px solid whitesmoke; /* 3px = expessura da borda criada em volta do Botão
+                                solid = precisa ser colocado para o 'hover' abaixo funcionar
+                                white = no 'hover' quando o mouse for posicionado sobre o Botão, a 
+                                borda ficará Branca, da mesma cor do Fundo */
+} 
+
+/* Classes criadas para controlar os Botões sobre as Fotos */
+.giethoorn {    
+    margin-top: -18.5%; 
+    margin-left: 8%;
+}
+
+.haia {
+    margin-top: -18.5%; 
+    margin-left: 34%;
+}
+
+.rotterdam {
+    margin-top: 18.5%; 
+    margin-left: 8%;
+}
+
+.keukenhof {
+    margin-top: 18.5%; 
+    margin-left: 34%;
+}
+
+/* Modo Responsivo */
+@media only screen and (max-width: 850px) { /* Tamanho máximo do Container de Textos */
+    .giethoorn {    
+        margin-top: -190%; 
+        margin-left: 1%;
+    }
+    .haia {
+        margin-top: -65%; 
+        margin-left: 1%;
+    }
+    .rotterdam {
+        margin-top: 65%; 
+        margin-left: 1%;
+    }
+    .keukenhof {
+        margin-top: 190%; 
+        margin-left: 1%;
+    }
+}
+

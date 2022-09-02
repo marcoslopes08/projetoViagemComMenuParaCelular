@@ -1,0 +1,38 @@
+/* CSS PROJETO VIAGEM - MENU CELULAR */
+.btn { /* background-color embaixo do Botão */
+    display: flex; /* garante que o Botão será movimentado */
+    justify-content: center; /* justifica e centraliza */
+    align-items: center;  /* centraliza em linha HORIZONTALMENTE */
+    position: fixed; /* fixa o posicionamento do Botão do lado direito da Tela e permite que ele Role com a página
+                        position: absolute = prende o Botão e ele não Rola com o Scrool */
+    bottom: 10px; /* distancia inferior entre o Botão e o fim da Tela */
+    right: 10px; /* distancia da margem direita entre o Botão a Barra de Rolagem da Tela */
+    width: 50px; /* largura do background-color */
+    height: 50px; /* altura do background-color */
+    background-color: #77b9e2; /* cor do background-color */
+    text-decoration: none; /* retira o sublinhado que aparece como LINK clicável nos Botões */
+    border-radius: 30px; /* arredondamento das bordas */;
+    /* z-index: 8; */
+}
+.btn::after { /* Seta */
+    content: "⇧"; /* outros exemplos de Setas =  ↑, ⇡, ⇧ , ⬆ */
+    font-size: 32px; /* tamanho da Seta */
+    font-weight: bold; /* NEGRITO */
+    /* color: #484872; */ /* cor da Seta */
+    transition: margin-top 250ms; /* TEMPO em Micro Segundos que a Seta irá subir quando o mouse
+                                     for posicionado sobre o Botão */
+    /* z-index: 8; */
+}
+.btn:hover::after {
+    margin-top:-8px; /* faz a Seta subir quando o mouse é colocado em cima */
+    color: #fc036b; /* cor da Seta quando o mouse é colocado em cima */
+    /* z-index: 8; */
+}
+
+/* Responsividade Forçada abaixo */
+@media only screen and (max-width: 850px) { /* Tamanho máximo do Container de Textos */
+    .btn { /* controle do Botão */
+        width: 40px; /* largura do background-color */
+        height: 40px; /* altura do background-color */
+    }
+}

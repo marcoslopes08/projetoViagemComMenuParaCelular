@@ -1,0 +1,467 @@
+/* Projeto Viagens com Menu para Celular */
+/* abaixo Google Fonts */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins'); */
+
+/* CSS Global */
+* { 
+	margin: 0; /* zera todas as margens */
+	padding: 0; /* zera todos os espaços dentro da Tela */
+	box-sizing: border-box; /* cria um box */
+	font-family: Tahoma, sans-serif;
+}
+
+body, html { /* a função "Rolagem Suave" não funciona no Microsoft Edge (antigo Internet Explorer) */   
+    scroll-behavior: smooth; /* suaviza a rolagem em todo o site, quando o Menu for clicado */
+    overflow-x: hidden; /* evita que o conteúdo extrapole as margens */
+}
+
+/* Primeira Section - Foto da Montanha */
+header { /* header = cabeçalho - Primeira Section - Foto de Fundo */	
+	width: 100vw; /* será responsiva e toda largura da Tela */
+    height: 100vh; /* será responsiva e ocupará toda a altura da Tela */
+	background-image: url("https://thumbs2.imgbox.com/f7/f9/4YlrhbFN_t.jpg");
+    background-position: top; /* a Foto vai começar a aparecer na Tela começando de cima pra baixo 
+                                    center = começa a aparecer do MEIO da Foto para todos os lados 
+                                    top = começa a aparecer do Céu até as flores 
+                                    é o melhor nessa situação */
+	background-size: cover; /* ocupa todos os espaços */
+	display: flex; /* permite que Texto/Botão sejam manipulados dentro do Container */
+	align-items: flex-end; /* alinha os elementos Texto/Botão em linha HORIZONTALMENTE, 
+							  mas na parte Inferior do Container */
+    justify-content: center; /* justifica e centraliza Texto/Botão dentro do Container */
+}
+
+a { /* TODAS as Sections - Botões */
+    text-decoration: none; /* retira o sublinhado que vem como padrão */
+}
+
+.header-content { /* cabecalho-conteudo - Primeira Section - Texto e Botão */
+	margin-bottom: 150px; /* margem Inferior */
+	color: whitesmoke; /* cor da Fonte */
+	text-align: center; /* centraliza Texto/Botão em linha HORIZONTALMENTE */
+}
+
+.header-content h2 { /* cabecalho-conteudo - Primeira Section - apenas Texto (Explore The Colorful World) */
+	font-size: 4vmin; /* aumenta o tamanho da Fonte e deixa Responsivo */
+	text-shadow: 2px 2px 0px black; /* Sombreamento Horizontal, Lado Direito das Letras */
+}
+
+.line { /* linha - TODAS as Sections (SUBLINHADO) - Sublinhado usado em todas as Sections */
+	width: 150px; /* LARGURA da linha criada como se fosse SUBLINHADO abaixo do Texto */
+	height: 4px; /* expessura da linha */
+	background: #fc036b; /* cor da Linha */
+	margin: 10px auto; /* 10px = margem Superior/Inferior em relação ao Texto acima/abaixo,
+						  ajuda a centralizar o SUBLINHADO  */
+	border-radius: 5px; /* arredonda as pontas do SUBLINHADO */
+}
+
+.header-content h1 { /* cabecalho-conteudo - Primeira Section - apenas Texto (A WONDERFUL GIFT) */
+	font-size: 7vmin; /* aumenta o tamanho da Fonte e deixa Responsivo */
+	margin-top: 50px; /* margem entre o Texto 'Explore The Colorful World' e 'A WONDERFUL GIFT' */
+	margin-bottom: 30px; /* margem entre o Texto 'A WONDERFUL GIFT' e o Botão 'Learn More' */
+	text-shadow: 2px 2px 0px black; /* Sombreamento Horizontal, Lado Direito das Letras */
+}
+
+.ctn { /* TODAS as Sections - Botão 'contato' - Primeira Section - usado em todas as Sections */
+	padding: 8px 15px; /* 8px = espaçamento entre margem Superior/Inferior dentro do Botão
+						 15px = espaçamento entre margem Direita/Esquerda dentro do Botão */
+	background: #fc036b; /* cor do Botão */
+	border-radius: 30px; /* arredonda as bordas do Botão */
+	color: whitesmoke; /* cor da Fonte */
+}
+
+/* Navbar - Menu de Navegação */
+.navbar { /* Classe apenas para o Logo (Aventure-se) */
+	position: absolute; /* coloca o Logo/Menu/Botão sobre a Foto  */
+	top: 0; /* zera qualquer espaço superior */
+	left: 0; /* zera qualquer espaço na esquerda */
+	display: flex; /* permite que os Logo/Menu/Botão sejam manipulados dentro do Container */
+	width: 100%; /* ocupa todo o espaço da Tela */
+	justify-content: space-between; /* espaçamento IGUAL entre todos Logo/Menu/Botão */
+	padding: 20px; /* espaçamento entre Logo/Menu/Botão e margem Superior da Tela */
+	color: whitesmoke; /* cor da Fonte */
+}
+
+.navbar .logo { /* Classe 'logo' (AVENTURE-SE) */
+	text-shadow: 2px 2px 0px black; /* Sombreamento Horizontal, Lado Direito das Letras */
+}
+
+ul {
+	list-style: none; /* retira o pontinho que, por padrão, vem com as tags <ul> <li> */
+}
+
+.nav-links {
+	display: flex; /* permite que os Logo/Menu/Botão sejam manipulados dentro do Container */
+	align-items: center; /* centraliza todos os elementos Logo/Menu/Botão em linha HORIZONTALMENTE */
+}
+
+.nav-links li {
+	margin: 0 30px; /* 0 = margem Superior/Inferior
+					30px = espaçamento IGUAL entre os Botões do Menu */
+}
+
+.active {
+	color: #fc036b; /* cor da Fonte */
+	text-decoration: underline; /* sublinhado abaixo do Menu que for solicitado */
+	font-weight: bold; /* NEGRITO */
+}
+
+/* CSS para Menu Java */
+/* Menu de Navegação - SOMENTE para Mobile */
+.menu-btn { /* Logo do Lado Direito da Tela - imagem dos 3 traçinhos do Menu Lado Esquerdo da Tela */
+	position: absolute; /* fixa imagem dos 3 traçinhos do Menu sobre a Foto com os comando abaixo */
+	top: 30px; /* distancia entre a imagem dos 3 traçinhos do Menu e o Topo da Tela no Modo Responsivo (apenas) */
+	right: 30px; /* distancia entre a imagem dos 3 traçinhos do Menu e a margem Direita da Tela no Modo Responsivo (apenas) */
+	width: 40px; /* largura da imagem dos 3 traçinhos do Menu */
+	cursor: pointer; /* cursor aparecerá como dedo apontando */
+	display: none; /* faz a imagem dos 3 traçinhos do Menu DESAPARECER no modo NORMAL/COMPUTADOR */
+}
+
+/* Segunda Section - Events - Eventos */
+section { /* Tamanho que Texto/Fotos/Botões ocuparão dentro do Container */
+	width: 80%; /* 90% ajuda a arrumar, dá um espaço MELHOR entre as Fotos
+				   80% deixa as Fotos grudadas, acho que ele ERROU
+				   tamanho do Container que Texto/Fotos terão 
+				   Esta largura interfera na Segunda e Quarta Section */
+	margin: 80px auto; /* 80px = margens Superior/Inferior iguais e automáticas */
+}
+
+section img {
+	width: 490px; /* largura máxima das 2 Fotos dentro dos Boxes */
+	max-height: 50vh; /* altura máxima das 2 Fotos dentro dos Boxes */
+}
+
+.title { /* TÍTULO apenas da Segunda Section */
+	text-align: center; /* centraliza o Título/Sublinhado no meio da Tela */
+	font-size: 6vmin; /* Era 4vmin - aumenta o tamanho da Fonte e deixa Responsivo */
+	color: #49497e; /* cor do Título na Section */
+}
+
+.row { /* LINHA Container - criada para colocar 2 Colunas na:
+	      Segunda Section - Events - Eventos (Upcoming Events)
+		  Quarta Section - Tours - Passeios (UPCOMING TOURS & DESTINATION) */
+	display: flex; /* permite que Texto/Fotos/Botões sejam manipulados dentro do Container */
+	align-items: center; /* centraliza todos os elementos Texto/Fotos/Botões em linha HORIZONTALMENTE */
+	width: 100%; /* todos os elementos Texto/Fotos/Botões ocuparão 100% da Linha Criada */
+	justify-content: space-between; /* dá espaçamento igual entre todos os elementos Texto/Fotos/Botões */
+	/* background: cyan; */ /* APENAS DEMONSTRAÇÃO DO PLANO DE FUNDO */
+}
+
+.row .col { /* Segunda Section - Events - Eventos (Upcoming Events)
+			   Quarta Section - Tours - Passeios (UPCOMING TOURS & DESTINATION) */
+	display: flex; /* permite que Texto/Fotos/Botões sejam manipulados dentro do Container */
+	flex-direction: column; /* permite que os elementos sejam movimentados dentro da Coluna Criada */
+	align-items: center; /* centraliza todos os elementos Texto/Fotos/Botões em linha HORIZONTALMENTE */
+}
+
+.events .row { /* LINHA Container - Segunda Section - Events - Eventos */
+	margin-top: 50px; /* margem entre a Linha Criada e o Título */
+}
+
+h4 {  /* Segunda Section - Events - Eventos
+		 Títulos dentro dos 2 Boxes (Everest Camp Trek) (Walking Holidays)*/
+	font-size: 4vmin; /* Era 3vmin - aumenta o tamanho da Fonte e deixa Responsivo */
+	color: #484872; /* cor do Título */
+	margin: 20px auto; /* 20px = margens Superior/Inferior entre Título/Foto (acima) e Título/Texto (abaixo) */
+}
+
+p { /* Paragrafos - Segunda Section - Events - Eventos */
+	color: #7c7c7c; /* cor da Fonte nos Parágrafos */
+	padding: 0px 40px; /* 0px = espaçamento Superior/Inferior
+						 40px = espaçamento nas Lateriais Esquerda/Direita */
+}
+
+.events .ctn { /* Botões - Segunda Section - Events - Eventos */
+	margin-top: 30px; /* margem entre o Botão e Texto acima */
+}
+
+/* Terceira Section - Explore - Explore */
+.explore {
+	width: 100%; /* ocupará 100% da largura do Container, sempre */
+	height: 100vh; /* ocupará 100% da altura do Container, sempre */
+	background-image: url("../img/Amesterdã-6.jpg");
+	background-position: center; /* centraliza a imagem dentro do Container */
+	background-size: cover; /* ocupa todos os espaços da Tela */
+	background-repeat: no-repeat; /* não repete a imagem */
+	display: flex; /* permite que Texto/Botão sejam manipulados dentro do Container */
+	align-items: center; /* centraliza todos os elementos Texto/Botão em linha HORIZONTALMENTE */
+	/* filter: brightness(1.25); */ /* clareia a Foto */
+	/* filter: blur(2px); */ /* desfoca a Foto */
+	/* filter: saturate(300%); */ /* deixa a Foto com as cores bem fortes */
+	/* filter: grayscale(200%); */ /* deixa a Foto em Preto e Branco */
+	/* filter: contrast(60%); */ /* causa um efeito NÉVOA sobre a Foto */
+	/* filter: opacity(0.4) drop-shadow(0 0 0 red); */ /* deixa a Foto opaca e aplica cor sobre ela */
+	/* filter: invert(75%); */ /* Inverte as cores, baseado em porcentagem */
+	/* filter: hue-rotate(320deg); */ /* tambem inverte as cores da Foto */
+	/* filter: hue-rotate(-170deg);  *//* tambem inverte as cores da Foto */
+	/* filter: sepia(60%); */ /* Muda o "tom" para sépia */
+	/* filter: contrast(175%) brightness(20%); */ /* altera Contraste das Cores e Brilho */
+}
+
+.explore-content { /* Container - Terceira Section - Explore - Explore */
+	width: 60%; /* largura que o Texto terá dentro do Container */
+	padding: 50px; /* espaçamento para todos os lados */
+	color: whitesmoke; /* cor da Fonte do Título */
+	display: flex; /* permite que Texto/Botão sejam manipulados dentro do Container */
+	align-items: center; /* centraliza todos os elementos Texto/Botão em linha HORIZONTALMENTE */
+	flex-direction: column; /* permite que os elementos sejam movimentados dentro da Coluna Criada */
+}
+
+.explore-content h1 { /* Título do Container - Terceira Section - Explore - Explore */
+	font-size: 7vmin; /* aumenta o tamanho da Fonte no Título e deixa Responsivo */
+	text-shadow: 2px 2px 0px black; /* Sombreamento Horizontal, Lado Direito das Letras, no Título */
+	/* -1px -1px 0px black; Sombreamento Superior, Lado Esquerdo das Letras */               
+	/* 1px -1px 0px black,  Sombreamento Superior, Lado Direita das Letras  */                  
+	/* 1px 1px 0px black,   Sombreamento Inferior, Lado Direita das Letras  */                  
+	/* 1px 0px 0px black;   Sombreamento Horizontal, Lado Direito das Letras */
+	/* -1px 1px 0px black,  Sombreamento Horizontal, Lado Esquerdo das Letras */    
+	/* 0px 1px 0px black;   Sombreamento Vertical, apenas */
+	/* -webkit-text-stroke: .5px red; Sombreamento somente ao redor das Letras */
+}
+
+.explore-content p { /* Parágrafo do Container - Terceira Section - Explore - Explore */
+	color: #484872; /* cor da Fonte */
+	text-shadow: 0.5px 0.5px 0px #484872; /* Sombreamento Horizontal, Lado Direito das Letras */
+	font-size: 4vmin; /* aumenta o tamanho da Fonte no Título e deixa Responsivo */
+	background-color: whitesmoke; /* cor de fundo do Parágrafo */
+	opacity: 0.6; /* transparência no plano de fundo */
+	padding: 2%; /* espaçamento igual em todas as margens do Box/Plano de Fundo */
+	/* border-radius: 30px; */
+}
+
+.explore-content .ctn { /* Botão do Container - Terceira Section - Explore - Explore */
+	margin-top: 40px; /* distância entre o Botão e o Texto acima */
+}
+
+.explore-content .line { /* SUBLINHADO abaixo do Título - Terceira Section - Explore - Explore */
+	margin-bottom: 50px; /* coloca o SUBLINHADO embaixo do Título */
+}
+
+/* Quarta Section - Tours - Passeios */
+.tours .image-gallery {
+	display: flex; /* permite que Texto/Fotos/Botão sejam manipulados dentro do Container */
+	flex-wrap: wrap; /* envoltório flexível */
+	width: 100%; /* largura das Fotos dentro do Container */
+	align-items: center; /* centraliza todas as Fotos em linha HORIZONTALMENTE */
+}
+
+.image-gallery img { /* Imagens dentro do Container */
+	max-width: 330px; /* máxima largura das Fotos dentro do Container */
+	height: 36vh; /* deixa todas as Fotos com a mesma altura dentro do Container */
+	margin: 10px; /* espaço/margem entre todos os lados das Fotos */	
+}
+
+.content-col {
+	width: 35%; /* largura para Texto (Lado Esquerdo da Tela) do lado das Fotos dentro do Container */
+}
+
+.image-col {
+	width: 65%; /* largura para Fotos (Lado Direito da Tela) do lado do Texto dentro do Container */
+}
+
+.content-col h1 { /* Título do Container */
+	font-size: 7vmin; /* aumenta o tamanho da Fonte no Título e deixa Responsivo */
+	color: #484872; /* cor do Título */
+}
+
+.content-col .line { /* SUBLINHADO abaixo do Título */
+	margin-left: -1px; /* margem NEGATIVA para colocar o SUBLINHADO alinhado à Esquerda do Título */
+}
+
+.content-col p { /* PARÁGRAFO */
+	padding: 0; /* retira qualquer espaço */
+	margin: 30px auto; /* 30px = margens Superior/Inferior iguais entre Título acima e Botão abaixo */
+}
+
+.content-col .ctn { /* Botão */
+	margin-left: -10px; /* ajuda a centralizar o Botão  */
+}
+
+/* Quinta Section - Footer - Rodapé */
+.footer {
+	width: 100%; /* largura do Rodapé */
+	min-height: 100px; /* altura mínima do Rodapé */
+	padding: 20px 80px; /* 20px = espaçamento Superior/Inferior
+						   80px = espaçamento nas Laterais (Esquerda/Direita) */
+	margin: 0; /* zera qualquer margem */
+	background: #484872; /* cor de Fundo do Rodapé */
+	text-align: center; /* centraliza Texto no meio da Tela */
+}
+
+.footer p { /* PARÁGRAFO - Rodapé */
+	color: whitesmoke; /* cor da Fonte */
+	margin: 20px auto; /* 20px = margem Superior/Inferior automática nos Parágrafos */
+}
+
+/* CSS para PÁGINAS */
+.row-pages { /* LINHA Container - criada para colocar 2 Colunas nas PÁGINAS, apenas:
+				Quarta Section - Tours - Passeios (UPCOMING TOURS & DESTINATION) */
+	height: 75vh; /* altura da páginas será 100% */
+	display: flex; /* permite que Texto/Fotos/Botões sejam manipulados dentro do Container */
+	align-items: center; /* centraliza todos os elementos Texto/Fotos/Botões em linha HORIZONTALMENTE */
+	width: 100%; /* todos os elementos Texto/Fotos/Botões ocuparão 100% da Linha Criada */
+	justify-content: space-between; /* dá espaçamento igual entre todos os elementos Texto/Fotos/Botões */
+}
+
+.explore-pages {
+	width: 100%; /* ocupará 100% da largura do Container, sempre */
+	height: 100vh; /* ocupará 100% da altura do Container, sempre */
+	background-image: url("https://thumbs2.imgbox.com/85/02/7gRxsUXw_t.jpg");
+	background-position: center; /* centraliza a imagem dentro do Container */
+	background-size: cover; /* ocupa todos os espaços da Tela */
+	background-repeat: no-repeat; /* não repete a imagem */
+	display: flex; /* permite que Texto/Botão sejam manipulados dentro do Container */
+	align-items: center; /* centraliza todos os elementos Texto/Botão em linha HORIZONTALMENTE */
+	margin: 0; /* retira espaçamento/margens Superior/Inferior da Foto */
+}
+
+/* CSS do Botão Voltar, apenas nas Páginas */
+.button-pages { /* Botão 'VOLTAR' dentro das Páginas 1, 2, 3 */
+	background-color: #fc036b; /* cor de Fundo do Botão */
+	color: whitesmoke; /* cor da Fonte */
+	text-decoration: none; /* retira o sublinhado que vem como padrão */
+	border: 2px solid transparent; /* 2px = expessura da borda criada em volta do Botão
+									solid = precisa ser colocado para o 'hover' abaixo funcionar
+						  	  transparent = precisa ser colocado senão aparecerá uma borda Branca antes do 'hover' */
+	/* font-weight: bold;  *//* NEGRITO */
+	padding: 8px 15px; /* 8px = espaçamento entre margem Superior/Inferior dentro do Botão
+						 15px = espaçamento entre margem Direita/Esquerda dentro do Botão */
+	border-radius: 0 10px 10px 30px; /* 0 = canto superior Esquerdo do Botão NÃO SERÁ ARREDONDADO
+									 10px = arredondamento superior Direito do Botão
+									 10px = arredondamento inferior Direito do Botão 
+									 30px = arredondamento inferior Esquerdo do Botão*/
+	transition: .4s; /* tempo que levará para APARECER/DESAPARECER a cor dos Botões do Menu
+						quando o mouse for posicionado sobre eles */
+	/* text-transform: uppercase; */ /* Caixa Alta */	
+}
+
+.button-pages:hover { /* Botão 'VOLTAR' dentro das Páginas 1, 2, 3 */
+	background-color: transparent; /* transparent = faz o 'hover' funcionar */
+	border: 2px solid #fc036b; /* 2px = expessura da borda criada em volta do Botão
+								  solid = precisa ser colocado para o 'hover' abaixo funcionar
+								#f9004d = no 'hover' quando o mouse for posicionado sobre o Botão, o Fundo ficará
+										  escuro (da cor do Plano de Fundo) e as bordas ficarão vermelhas */
+	cursor: pointer; /* cursor aparecerá como dedo apontando */
+	color: #fc036b; /* cor da Fonte */
+}
+
+/* SOMENTE PARA CELULAR - Mobile device - Modo Responsivo */
+@media only screen and (max-width: 850px) { /* Tamanho máximo do Container de Textos */
+	.navbar { /* Menu Java */
+        padding: 0; /* retira qualquer espaço */
+    }
+	.logo { /*  Menu Java - Logo do Lado Esquerdo da Tela (ADVENTURE) */
+		position: absolute; /* fixa o Logo sobre a Foto com os comandos abaixo */
+		top: 30px; /* distância entre o Logo e o Topo da Tela no Modo Responsivo (apenas) */
+		left: 30px; /* distância entre o Logo e a margem Esquerda da Tela no Modo Responsivo (apenas) */
+	}
+	.nav-links { /* Menu Java */
+		flex-direction: column; /* transforma o Menu numa coluna, apenas no Modo Responsivo */
+		width: 100%; /* ocupará 100% da largura da Tela no Modo Responsivo */
+		height: 100vh; /* ocupará 100% da altura da Tela no Modo Responsivo */
+		justify-content: center; /* justifica e centraliza o Menu no Modo Responsivo */
+		background: #77b9e2; /* cor de Fundo do Menu no Modo Responsivo */
+		margin-top: -900px; /* coloca uma margem NEGATIVA para esconder o Menu */
+		transition: all 0.5s ease; /* tempo que o Menu irá levar para subir/descer quando os 
+									  3 traçinhos do Menu forem acionados */
+	}
+	.nav-links li { /* Menu Java */
+		margin: 30px auto; /* espaçamento entre os Botões do Menu no Modo Responsivo */
+	}
+	.mobile-menu { /* Menu Java */
+		margin-top: 0px; /* qualquer valor acima de ZERO faz o background LILÁS ficar abaixo do topo da Tela
+							precisa ser ZERO */
+		border-bottom-right-radius: 50%; /* borda arredondada somente na parte Direita/Inferior */
+	}
+	.menu-btn { /* Menu Java */
+		display: block; /* faz a imagem dos 3 traçinhos do Menu APARECER no modo MOBILE */
+	}
+	/* Section Events - Eventos */
+	.row { 
+		flex-direction: column; /* coloca as Fotos numa coluna, apenas no Modo Responsivo */
+	}
+	.col img { 
+		max-width: 90%; /* largura máxima das Fotos no Modo Responsivo */
+	}
+	.row .col { 
+		margin: 20px auto; /* margem Superior/Inferior automática entre todos os Elementos Fotos/Texto/Botão */
+	}
+	.row .col h4 { /* Títulos dentro dos 2 Boxes */
+		font-size: 7vmin; /* Era 3vmin - aumenta o tamanho da Fonte e deixa Responsivo */
+	}
+	/* Section Explore - Explore */
+	.explore-content { 
+		width: 100%; /* ocupará 100% da largura do Container no Modo Responsivo */
+	}
+	.explore-content h1 { 
+		text-align: center; /* centraliza o Título */
+	}
+	/* Section Tours - Passeios */
+	tours-linha {
+		margin-top: -100px;
+	}
+	.tours .col { 
+		width: 100%; /* ocupará 100% da largura do Container no Modo Responsivo */
+	}
+	.tours .col h1 { 
+		text-align: center; /* centraliza o Título */
+	}
+	.content-col .line { /* SUBLINHADO abaixo do Título */
+		margin: 10px 50px; /* 10px = espaçamento entre o Título (UPCOMING TOURS & DESTINATION) e SUBLINHADO abaixo
+							  50px = espaçamento nas Laterais Esquerda/Direita, ajuda a centralizar o SUBLINHADO */
+	}
+	.image-gallery {
+		justify-content: center; /* centraliza todas as Fotos */
+		align-items: center; /* centraliza todas as Fotos em linha HORIZONTALMENTE */
+	}
+	.image-gallery img {
+		width: 90%; /* largura das Fotos no Modo Responsivo */
+		object-fit: cover; /* preenche as Fotos do mesmo tamanho, partindo de um Raio do Centro para as Laterais */
+		height: 30vh; /* altura das Fotos no Modo Responsivo */
+	}
+	/* Section Footer - Rodapé */
+	.footer { 
+		font-size: small;
+		padding: 10px; /* espaçamento dentro do Rodapé entre todas as margens
+						  sem ele, no Modo Responsivo o Texto dentro do Rodapé fica numa Coluna muito fina */
+	}
+	/* CSS para PÁGINAS */
+	.row-pages { 
+		flex-direction: column; /* coloca as Fotos numa coluna, apenas no Modo Responsivo */
+	}
+	.row-pages .line { /* SUBLINHADO abaixo do Título */
+		margin-left: 26%; /* SUBLINHADO centralizado abaixo do Título */
+	}
+	.button-pages {
+		margin: 35%; /* centraliza o Botão dentro do Container */
+	}
+	.tours .row-pages .image-gallery {
+		margin-top: 10%; /* espaçamento entre as Fotos e Botão acima */
+	}
+	.explore-pages .explore-content {
+		margin-top: 30%; /* espaçamento entre as Fotos e Botão acima */
+	}
+	.explore-pages .explore-content .button-pages {
+		margin-top: 0%; /* espaçamento entre as Fotos e Botão acima */
+	}
+}
+
+/* Animations - Animações nas Fotos */
+img {
+	transition: transform .3s ease; /* tempo de duração para Foto expandir quando o mouse for colocado sobre ela */
+}
+
+img:hover {
+	transform: scale(1.1); /* quanto a Foto irá expandir */
+}
+
+.ctn:hover {
+	background: whitesmoke; /* cor dos Botões no Hover */
+	color: #fc036b; /* cor dos Botões no Hover */
+	box-shadow: 2px 2px 5px #00000056; /* efeito sombreado dos Botões no Hover */
+}
+
+li:hover {
+	color: #fc036b; /* cor da Fonto do Menu no Hover */
+	cursor: pointer; /* cursor aparecerá como dedo apontando */
+}
