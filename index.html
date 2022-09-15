@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site com Menu para Celular</title>
 
+    <!-- BLOQUEADO - Ajax jQuery -->
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.3.min.js"></script>
+	
+	<!-- BLOQUEADO - Abaixo - jQuery (necessário para Pluguins de JavaSript no Bootstrap) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<!-- Acima BIBLIOTECAS para controlar o BOTÃO Voltar ao Topo -->
+
     <!-- Abaixo CSS Estilos da Página  -->
     <link rel="stylesheet" href="css/styleSiteViagemMenuCelular.css">
     
@@ -136,6 +143,9 @@
             navlinks.classList.toggle('mobile-menu')
         })
     </script>
+
+    <!-- Abaixo, jQuery (Java) que faz Botão VOLTAR AO TOPO aparecer/desaparecer na rolagem da página -->
+	<script src="java/animacaoBotaoVoltarAoTopo.js"></script>
 
     <!-- Botão voltar ao Topo -->
     <a href="#" class="btn" title="Voltar ao Topo"></a>
