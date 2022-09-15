@@ -62,19 +62,19 @@
 /* Modo Responsivo */
 @media only screen and (max-width: 850px) { /* Tamanho máximo do Container de Textos */
     .giethoorn {    
-        margin-top: -190%; 
+        margin-top: -175%; 
         margin-left: 1%;
     }
     .haia {
-        margin-top: -65%; 
+        margin-top: -60%; 
         margin-left: 1%;
     }
     .rotterdam {
-        margin-top: 65%; 
+        margin-top: 60%; 
         margin-left: 1%;
     }
     .keukenhof {
-        margin-top: 190%; 
+        margin-top: 175%; 
         margin-left: 1%;
     }
 }
