@@ -36,6 +36,8 @@
                                 solid = precisa ser colocado para o 'hover' abaixo funcionar
                                 white = no 'hover' quando o mouse for posicionado sobre o Botão, a 
                                 borda ficará Branca, da mesma cor do Fundo */
+    margin-right: -30px; /* margem NEGATIVA ajuda o comando "transform: translateX(-10%)" funcionar 
+                            evita que o MENU trema quando o mouse for posicionado sobre ele */
 } 
 
 /* Classes criadas para controlar os Botões sobre as Fotos */
@@ -76,6 +78,11 @@
     .keukenhof {
         margin-top: 185%; 
         margin-left: 1%;
+    }
+    .botaoLuminosoProjetos:hover {
+        position: absolute; /* precisa ser "position: absolute" pro comando abaixo funcionar */
+        transform: translateX(-5%); /* faz o hover mover o Botão pra ambos os Lados
+                                        no Modo Responsivo */   
     }
 }
 
