@@ -22,7 +22,7 @@
 }
 
 .botaoLuminosoProjetos:hover {
-    /* position: absolute; */
+    position: relative;
     letter-spacing: 0.25em; /* espaçamento/animação que expandirá o Botão quando o mouse for posicionado
                             acima dele (MUITO LEGAL ISSO) */
     background: var(--clr); /* var(--clr) faz a MÁGICA ACONTECER, a Linha em volta do Botão
@@ -81,7 +81,7 @@
     }
     .botaoLuminosoProjetos:hover {
         position: absolute; /* precisa ser "position: absolute" pro comando abaixo funcionar */
-        transform: translateX(-5%); /* faz o hover mover o Botão pra ambos os Lados
+        transform: translateX(-10%); /* faz o hover mover o Botão pra ambos os Lados
                                         no Modo Responsivo */   
     }
 }
